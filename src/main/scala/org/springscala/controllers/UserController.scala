@@ -20,11 +20,14 @@ import org.springframework.web.bind.annotation.PathVariable
 @RequestMapping(path = Array("/api"))
 class UserController(@Autowired private val userService: UserService, @Autowired private val dataSource: DataSource) {
 
-  @GetMapping(path = Array("/users"))
+  @GetMapping(path = Array("/users1"))
   def getAllUsers(): Iterable[Users] = {
-    userService.listUsers
+    userService.listUsers();
   }
-  
+  /*@GetMapping(path = Array("/users"))
+  def getUsers(): Iterable[Users] = {
+    userService.listUsers
+  }*/
   @GetMapping(path = Array("/users/{id}"))
   def getUser(@PathVariable id: Long): Users = {
     userService.getUser(id)

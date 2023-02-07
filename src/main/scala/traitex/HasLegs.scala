@@ -1,0 +1,5 @@
+package traitex
+
+trait HasLegs {
+
+}
